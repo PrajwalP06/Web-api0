@@ -1,0 +1,49 @@
+.image-Size{
+    width: 100%;
+    height:auto;
+}
+.footer-Div{
+    height:auto;
+    width: 100%;
+}
+.form-InnerDiv{ 
+    padding: 20px;   
+    height: 470px;
+    width: 510px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin-top: 10px; 
+    background-color: #fff;  
+}
+.Submit-btn{
+    margin-left: 40%;
+    margin-top: 45px;
+    height: 40px;
+    width: 80px;
+    border-radius: 8px;
+    background-color: rgb(64, 64, 128);
+    color: white;
+}
+.Submit-btn:hover{
+    background-color: gray;
+    color: #000;
+}
+.image-sty{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    padding: 4px;
+}
+.card-Div{
+    width: 90% ;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color:#fff ;
+    box-shadow: 5px 8px 7px 8px rgba(0.1,0.2,0,0.5);
+    padding: 20px;
+    margin:0 auto;
+    margin-top: 20px;
+    
+}
