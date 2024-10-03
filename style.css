@@ -5,6 +5,9 @@
 .footer-Div{
     height:auto;
     width: 100%;
+    position: fixed;
+    bottom: 0%;
+    background-color: #ccc;
 }
 .form-InnerDiv{ 
     padding: 20px;   
