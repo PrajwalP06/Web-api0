@@ -43,7 +43,7 @@
 }
 .card-Div{
     width: 90% ;
-    height: 300px;
+    height: 200px;
     border: 2px solid #ccc;
     border-radius: 20px;
     background-color:#fff ;
@@ -61,8 +61,6 @@ body {
 }
 
 .card {
-    height: 200px;
-    width: 200px;
     margin-top: 10px;
     border: none;
     border-radius: 15px;
