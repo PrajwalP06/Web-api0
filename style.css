@@ -65,6 +65,9 @@ body {
     border-radius: 15px;
     background: #ffffff;
     transition: transform 0.3s ease-in-out;
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
 }
 
     .card:hover {
