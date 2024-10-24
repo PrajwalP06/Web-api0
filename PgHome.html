@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <script src="cart.js"></script>
   </head>
   <body>
     <section>
@@ -38,108 +40,165 @@
     
     <section>
       <div class="main-Div">
-        <h5> <i class="bi bi-list"></i>Select your items: <i class="bi bi-cart" style="position: absolute; right: 0; margin-right: 20px;"></i></h5>
+        <h5> <i class="bi bi-list"></i>Select your items:
+          <i data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="bi bi-cart" style="position: absolute; right: 0; margin-right: 20px;"></i></h5>
         <div class="row">
 
 
             <!--another Item-->
 
             <div class="card-Div">
-              <img src="/momo.png" style="width:30px;height:30px;">
+              <img src="momo.png" style="width:30px;height:30px;">
             
               <div>Chicken Momo</div>
-              <input type="number" id="momo" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addChickenMomoToCart"><i class="bi bi-plus"></i></button>
+              <input type="number"  value="1" min="1" id="CMomo" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('Chicken Momo',100,'CMomo')" ><i class="bi bi-plus"></i></button>
             </div>
             <!--Second Item-->
 
             <div class="card-Div">
-              <img src="/momo.png" style="width:30px;height:30px;">
+              <img src="momo.png" style="width:30px;height:30px;">
             
               <div>Veg Momo</div>
-              <input type="number" id="momo" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addChickenMomoToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" value="1" min="1" id="VMomo" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('VegMomo',60,'VMomo')" ><i class="bi bi-plus"></i></button>
             </div>
 
             <!--third item-->
             <div class="card-Div">
-              <img src="/samosa.jpg" style="width:30px;height:30px;">
+              <img src="samosa.jpg" style="width:30px;height:30px;">
             
               <div>Samosa</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" value="1" id="Samosa" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('Samosa',20,'Samosa')"><i class="bi bi-plus"></i></button>
             </div>
 
             <!--fourth item-->
             <div class="card-Div">
-              <img src="/hakkaNOodles.png" style="width:30px;height:30px;">
+              <img src="hakkaNOodles.png" style="width:30px;height:30px;">
             
               <div>Veg Noodles</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" value="1" id="VNoodles" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('vegNoodles',60,'VNoodles')"><i class="bi bi-plus"></i></button>
             </div>
 
 
             <!--seventh item-->
             <div class="card-Div">
-              <img src="/chowmin.png" style="width:30px;height:30px;">
+              <img src="chowmin.png" style="width:30px;height:30px;">
             
               <div>Chicken Chowmin</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" value="1" id="CChowmin" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('chickenChowmin',140,'CChowmin')"><i class="bi bi-plus"></i></button>
             </div>
 
             <!--Eight item-->
             <div class="card-Div">
-              <img src="/Thali Veg.jpg" style="width:30px;height:30px;">
+              <img src="Thali Veg.jpg" style="width:30px;height:30px;">
             
               <div>Veg Thali</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" id="vegThali" value="1"  class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('vegThali',100,'vegThali')"><i class="bi bi-plus"></i></button>
             </div>
 
 
 
             <!--Tenth item-->
             <div class="card-Div">
-              <img src="/tea.jpg" style="width:30px;height:30px;">
+              <img src="tea.jpg" style="width:30px;height:30px;">
             
               <div>Milk Tea</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" id="MTea" value="1" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('milkTea',20,'MTea')"><i class="bi bi-plus"></i></button>
             </div>
 
 
             <!--Eleventh item-->
             <div class="card-Div">
-              <img src="/tea.jpg" style="width:30px;height:30px;">
+              <img src="tea.jpg" style="width:30px;height:30px;">
             
               <div>Black Tea</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" id="BTea" value="1" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('blackTea',15,'BTea')"><i class="bi bi-plus"></i></button>
             </div>
 
 
             <!--Twelveth item-->
             <div class="card-Div">
-              <img src="/Coffee.jpg" style="width:30px;height:30px;">
+              <img src="Coffee.jpg" style="width:30px;height:30px;">
             
               <div>Milk Coffee</div>
-              <input type="number" id="samosa" value="1" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" id="addSamosaToCart"><i class="bi bi-plus"></i></button>
+              <input type="number" id="MCoffee" value="1" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('milkCoffee',50,'MCoffee')"><i class="bi bi-plus"></i></button>
             </div>
-
-
-
         </div>
     </div>
     </section>
+    <div>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
 
-    
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Your Items Here</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items"></div>
+        <p>Total: Rs.<span id="total-price">0</span></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>
 <section>
   <div class="footer-Div">
     &copy; SJ's भान्साघर 2024
   </div>
 </section>
+
+<script>
+  function addToCart(itemName,price,qtyId){
+   // Get the quantity value from the appropriate input field using the ID
+   const qty = parseInt(document.getElementById(qtyId).value, 10);
+
+// Validate the quantity
+   if (isNaN(qty) || qty <= 0) {
+   alert("Please enter a valid quantity.");
+  return;
+ }
+    const item = {name: itemName, price: price, quantity:qty};
+    cart.push(item);
+    updateCart();
+    console.log(item);
+    console.log("Script running");
+
+
+ }
+ function updateCart(){
+  const  cartItems = document.getElementById('cart-items');
+  const totalPrice = document.getElementById('total-price');
+  cartItems.innerHTML ='';
+  let total = 0;
+ 
+  cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    cartItems.innerHTML += `<p>${item.name}: Rs.${item.price} Qty: ${item.quantity} Total: Rs.${itemTotal}</p>`;
+    total += itemTotal;  // Accumulate total price
+  });
+
+  totalPrice.textContent = total;
+}
+</script>
+
   </body>
 </html>

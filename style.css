@@ -109,4 +109,8 @@ body {
     border-radius: 50px;
     padding: 0.5rem 2rem;
 }
+.form-control{
+    position:absolute;
+    margin-left: 248px;
+}
 
