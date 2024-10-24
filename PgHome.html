@@ -136,10 +136,6 @@
     </section>
     <div>
       <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -167,6 +163,7 @@
 </section>
 
 <script>
+  let cart=[];
   function addToCart(itemName,price,qtyId){
    // Get the quantity value from the appropriate input field using the ID
    const qty = parseInt(document.getElementById(qtyId).value, 10);
