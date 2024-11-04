@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-    <script src="cart.js"></script>
+     
   </head>
   <body>
     <section>
@@ -50,8 +50,8 @@
               <img src="momo.png" style="width:30px;height:30px;">
             
               <div>Chicken Momo</div>
-              <input type="number"  value="1" min="1" id="CMomo" class="form-control" style="width: 50px;">
-              <button type="button" class="btn btn-primary" onclick="addToCart('Chicken Momo',100,'CMomo')" ><i class="bi bi-plus"></i></button>
+              <input type="number" value="1" min="1" id="CMomo" class="form-control" style="width: 50px;">
+              <button type="button" class="btn btn-primary" onclick="addToCart('ChickenMomo',100,'CMomo')" ><i class="bi bi-plus"></i></button>
             </div>
             <!--Second Item-->
 
@@ -140,18 +140,28 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Your Items Here</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">SJ's भान्साघर</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div id="cart-items"></div>
-        <p>Total: Rs.<span id="total-price">0</span></p>
-
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="9b739e8-0419-4199-8eaf-8ea214038ffa">
+          <div> 
+            <input name="customerName" type="text" class="form-control" placeholder="your name">
+            <input name="phoneNumber" type="text" class="form-control" placeholder="contact number" maxlength="10" required>
+            <input name="shippingAddress" type="text" class="form-control" placeholder="shipping address" maxlength="50" required>
+            <input name="totalAmt"  id="totalAmount" value="0">
+          </div>
+          <div id="cart-items" name="Order"></div>
+          <p>Total: Rs.<span id="total-price">0</span></p>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="Submit" class="btn btn-primary">Place Order</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Place Order</button>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -183,16 +193,27 @@
  function updateCart(){
   const  cartItems = document.getElementById('cart-items');
   const totalPrice = document.getElementById('total-price');
+  
   cartItems.innerHTML ='';
   let total = 0;
  
   cart.forEach(item => {
     const itemTotal = item.price * item.quantity;
-    cartItems.innerHTML += `<p>${item.name}: Rs.${item.price} Qty: ${item.quantity} Total: Rs.${itemTotal}</p>`;
+    cartItems.innerHTML += `<p name="Order">${item.name}: Rs.${item.price} Qty: ${item.quantity} Total: Rs.${itemTotal}</p>
+                        <input name="lunchItem" type="text" id="lunchItem" value=${item.name}>
+                        <input name="lunchItem" type="text" id="lunchItem" value=${item.quantity} style="margin-top:5px;">
+    
+    `;
     total += itemTotal;  // Accumulate total price
   });
 
   totalPrice.textContent = total;
+  document.getElementById('totalAmount').value =  total;
+  
+  alert("Item added to cart");
+
+
+
 }
 </script>
 
